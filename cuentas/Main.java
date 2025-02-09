@@ -2,32 +2,32 @@ package cuentas;
 
 public class Main {
     public static void main(String[] args) {
-        // Crear el objeto cuenta1
+        // Create the account object cuenta1
         CCuenta cuenta1 = new CCuenta("Antonio López", "1000-2365-85-1230456789", 2500, 0);
         
-        // Llamar al método operativa_cuenta con una cantidad específica
+        // Call the operativa_cuenta method with a specific amount
         operativa_cuenta(cuenta1, 500f);
     }
 
     public static void operativa_cuenta(CCuenta cuenta, float cantidad) {
         double saldoActual;
 
-        // Mostrar saldo actual
+        // Display current balance
         saldoActual = cuenta.estado();
-        System.out.println("El saldo actual es " + saldoActual);
+        System.out.println("The current balance is " + saldoActual);
 
         try {
             cuenta.retirar(cantidad);
-            System.out.println("Retiro exitoso de " + cantidad);
+            System.out.println("Successful withdrawal of " + cantidad);
         } catch (Exception e) {
-            System.out.println("Fallo al retirar " + cantidad + ": " + e.getMessage());
+            System.out.println("Failed to withdraw " + cantidad + ": " + e.getMessage());
         }
 
         try {
             cuenta.ingresar(cantidad);
-            System.out.println("Ingreso exitoso de " + cantidad);
+            System.out.println("Successful deposit of " + cantidad);
         } catch (Exception e) {
-            System.out.println("Fallo al ingresar " + cantidad + ": " + e.getMessage());
+            System.out.println("Failed to deposit " + cantidad + ": " + e.getMessage());
         }
     }
 }
